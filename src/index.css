@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme tokens ─────────────────────────────────────────── */
+:root {
+  /* Light mode (default) */
+  --color-bg: 245 241 232;
+  /* #f5f1e8 */
+  --color-fg: 13 13 13;
+  /* #0d0d0d */
+}
+
+.dark {
+  /* Dark mode */
+  --color-bg: 13 13 13;
+  /* #0d0d0d */
+  --color-fg: 240 236 227;
+  /* #f0ece3 */
+}
+
+/* ── Smooth theme transition ──────────────────────────────── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Exclude animations & transforms from the global transition */
+.motion-safe\:transition-none,
+[data-framer-motion] {
+  transition: none !important;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-fg));
+  }
+}
