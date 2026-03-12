@@ -18,6 +18,7 @@ const works = [
         year: "2026",
         stack: "Python · Gemini API · RAG Pipeline · WhatsApp Web",
         description: "A WhatsApp chatbot that mimics a person's texting style using RAG on real chat history, generating eerily accurate doppelgänger-like responses.",
+        github: "https://github.com/akash-taurus/Doppel",
     },
     {
         id: "03",
